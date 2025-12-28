@@ -1,0 +1,22 @@
+# PyTorch & Torchvision (deep learning)
+torch>=2.0.1
+torchvision>=0.15.2
+
+# Numerical & scientific computing
+numpy>=1.25.0
+
+# Image processing
+Pillow>=10.0.0
+opencv-python>=4.11.0
+
+# Web app
+streamlit>=1.25.0
+
+# Interactive plots
+plotly>=5.20.0
+
+# Progress bar
+tqdm>=4.66.0
+
+# Optional: for future use (image augmentation, if perlu)
+albumentations>=1.3.1
