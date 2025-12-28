@@ -115,4 +115,4 @@ Silakan buka issue atau pull request untuk:
 
 ## Lisensi
 
-MIT License
+Nicholas Renotte License
