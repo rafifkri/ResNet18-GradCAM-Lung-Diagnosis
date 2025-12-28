@@ -15,24 +15,57 @@ Proyek ini mengimplementasikan **sistem klasifikasi CNN untuk penyakit paru** da
 
 ---
 
-## Struktur Proyek
+## Struktur Proyek Lengkap
 
 ```
-lung-disease-gradcam/
+lung_lagi/
+│
 ├── data/
 │   ├── train/
+│   │   ├── NORMAL/
+│   │   ├── PNEUMONIA/
+│   │   ├── TUBERCULOSIS/
+│   │   └── UNKNOWN/
+│   │
 │   ├── val/
+│   │   ├── NORMAL/
+│   │   ├── PNEUMONIA/
+│   │   ├── TUBERCULOSIS/
+│   │   └── UNKNOWN/
+│   │
 │   └── test/
-├── models/
-│   └── resnet18_best.pth
-├── results/               # Hasil output Grad-CAM overlay
+│       ├── NORMAL/
+│       ├── PNEUMONIA/
+│       ├── TUBERCULOSIS/
+│       └── UNKNOWN/
+│
 ├── src/
-│   ├── dataset.py
-│   ├── gradcam.py
-│   └── inference.py
-├── app.py                 # Aplikasi Streamlit
+│   ├── __init__.py
+│   ├── dataset.py          # dataloader + CLASS_NAMES
+│   ├── train.py            # training resnet18
+│   ├── evaluate.py         # evaluasi + confusion matrix
+│   ├── inference.py        # inference single image (NO Grad-CAM)
+│   └── gradcam.py           # Grad-CAM logic & utils
+│
+├── app.py                   # Streamlit app (Grad-CAM + UI klinis)
+│
+├── models/
+│   └── resnet18_best.pth    # model terbaik
+│
+├── outputs/                 # HASIL TRAINING & EVALUATION
+│   ├── acc_curve.png
+│   ├── loss_curve.png
+│   ├── confusion_matrix.png
+│   ├── accuracy.txt
+│   └── classification_report.txt
+│
+├── results/                 # HASIL INFERENCE & GRAD-CAM
+│   ├── *_overlay.jpg
+│   └── *_heatmap.jpg
+│
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
